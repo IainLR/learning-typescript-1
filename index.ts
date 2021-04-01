@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const url = 'https://jsonplaceholder.typicode.com/todos/1'
 
+// first TypeScript
 interface Todo {
   id: number
   title: string
@@ -15,9 +16,13 @@ axios.get(url).then((res) => {
   const title = todo.title
   const completed = todo.completed
 
+  logTodo(id, title, completed)
+})
+
+const logTodo = (id: number, title: string, completed: boolean) => {
   console.log(`
     The Todo with ID: ${id}
     Has a title of: ${title}
-    It is ${completed ? 'complete' : 'not complete'}
+    It is finihsed? ${completed}
   `)
-})
+}
